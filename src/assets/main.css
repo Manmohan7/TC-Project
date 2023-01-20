@@ -1,0 +1,86 @@
+:root {
+  --number-of-cols: 1;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.gap-24 {
+  gap: 24px;
+}
+
+
+.col {
+  flex-basis: calc(100% / var(--number-of-cols));
+}
+
+.col-lg {
+  flex-basis: calc((100% / var(--number-of-cols)) * 2);
+}
+
+.hide-sm {
+  display: none;
+}
+
+
+@media (min-width: 768px) {
+  .col, .col-lg {
+    --number-of-cols: 2;
+  }
+
+  .hide-sm {
+    display: inherit;
+  }
+}
+
+@media (min-width: 1440px) {
+  .col, .col-lg {
+    --number-of-cols: 3;
+  }
+}
+
+@media (min-width: 1920px) {
+  .col, .col-lg {
+    --number-of-cols: 4;
+  }
+}
