@@ -5,12 +5,12 @@
 
       <div class="input-group column">
         <label>Username</label>
-        <input type="text" placeholder="john" v-model="username" />
+        <input name="username" type="text" placeholder="john" v-model="username" />
       </div>
 
       <div class="input-group column">
         <label>Password</label>
-        <input type="password" placeholder="doe" v-model="password" />
+        <input name="password" type="password" placeholder="doe" v-model="password" />
       </div>
 
       <Button @handleClick="verifyUser()" />
@@ -35,7 +35,7 @@ export default {
       if(this.authenticateUser(this.username, this.password)) {
         router.push('/home')
       } else {
-        // invalid creds entered
+        window.alert('invalid creds')
       }
     }
   }
